@@ -1,0 +1,237 @@
+[33mcommit 49f3fb4699ca7e3227cf83cd86f383fafb6741ac[m[33m ([m[1;36mHEAD -> [m[1;32mdev[m[33m, [m[1;31morigin/dev[m[33m)[m
+Author: Your Name <you@example.com>
+Date:   Fri Jun 19 19:23:40 2020 +0800
+
+    '高度修改完成'
+
+[33mcommit 6ab6886da22e499aaa7ca55a79cdb8597029526f[m
+Author: Your Name <you@example.com>
+Date:   Fri Jun 19 10:40:03 2020 +0800
+
+    完成任务接口修改完成
+
+[33mcommit 3f9aee117213b9e319a44670cc5bffac96cc8320[m
+Author: Your Name <you@example.com>
+Date:   Thu Jun 18 21:00:52 2020 +0800
+
+    '放大图片完成'
+
+[33mcommit 74b4b45c23f5c918b0517bddd8e92917788ad279[m
+Author: Your Name <you@example.com>
+Date:   Thu Jun 18 17:31:45 2020 +0800
+
+    '备份修改'
+
+[33mcommit b8c208c758a303eab13f024fb5620d451b9619d5[m
+Author: Your Name <you@example.com>
+Date:   Thu Jun 18 14:14:42 2020 +0800
+
+    '数据采集基本完成'
+
+[33mcommit c0050d55bd6c930603ce145cc60dc03648136bcc[m[33m ([m[1;33mtag: v1.0[m[33m, [m[1;33mtag: tagName[m[33m)[m
+Author: Your Name <you@example.com>
+Date:   Wed Jun 17 19:45:21 2020 +0800
+
+    '兑换商城采集'
+
+[33mcommit ebc50bc802d6618e74a03d090dd5894b47c2e3e4[m
+Author: Your Name <you@example.com>
+Date:   Wed Jun 17 16:29:35 2020 +0800
+
+    地址替换公司内部地址完成
+
+[33mcommit c9b3f39e0ffccab640824c074c3a7c9f3c2c156d[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 16 21:13:50 2020 +0800
+
+    '封装数据埋点接口'
+
+[33mcommit 0f06f6a1ccc8e176c8ad52525a12cc4f3c0dff16[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 16 20:31:57 2020 +0800
+
+    开发代理服务器设置
+
+[33mcommit 745efbaa7d3a3ea2bada83e6bc661db4ebe9200c[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 16 20:03:56 2020 +0800
+
+    'start.html页面微调'
+
+[33mcommit ce4045a8b4957a26d7f7748c779217b33995f576[m
+Author: Your Name <you@example.com>
+Date:   Tue Jun 16 20:02:30 2020 +0800
+
+    修改地址wc
+
+[33mcommit 180a5bcf757944afc1a45fbf0f7c4a4291e86939[m
+Merge: 9c327fb c831ee6
+Author: Your Name <you@example.com>
+Date:   Tue Jun 16 18:42:49 2020 +0800
+
+    Merge branch 'dev' of http://gitlab.skysri.com/Kuiper/exchange-mall-mobile into dev
+
+[33mcommit 9c327fbbb7af2f6d9defb1fdd5d6f1d9ef9be1c6[m
+Merge: 4e338d3 107271a
+Author: Your Name <you@example.com>
+Date:   Tue Jun 16 18:42:30 2020 +0800
+
+    添加地址静态页完成
+
+[33mcommit c831ee6707335594a931f1387a2d73dcc89ca522[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 16 18:16:30 2020 +0800
+
+    '重定向html命名为start.html'
+
+[33mcommit 4481b3ad5d5a61a4c2223dfa9858bb4ba24f0466[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 16 17:34:39 2020 +0800
+
+    后台代理服务器地址更新
+
+[33mcommit 107271a13a6fdb90458cd7b95d446d75c68d8eaa[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 16 14:11:21 2020 +0800
+
+    1. rm因为兼容性改为rimraf 2. 请求后台接口url直接写死在代码里
+
+[33mcommit 4e338d3c457ffb558b5958266081184607635132[m
+Author: Your Name <you@example.com>
+Date:   Mon Jun 15 19:38:10 2020 +0800
+
+    验证码字体样式修改完成
+
+[33mcommit 2dc56e1d26261ffd6d4ae6f8062606f4fa5e7f67[m
+Author: Your Name <you@example.com>
+Date:   Mon Jun 15 17:25:07 2020 +0800
+
+    地址，订单详情样式修改
+
+[33mcommit d47dccc58403802b4f149ac5d1778b6986dc8072[m
+Author: Your Name <you@example.com>
+Date:   Mon Jun 15 16:52:23 2020 +0800
+
+    提交任务完成
+
+[33mcommit fb63fc94f92d6f2c3e189e166e5b7690662f3cb7[m
+Author: Your Name <you@example.com>
+Date:   Fri Jun 12 19:40:52 2020 +0800
+
+    优化了弹框样式式
+
+[33mcommit b6cf192feeda6cb393f8f5c0c3c41c8650611e46[m
+Author: Your Name <you@example.com>
+Date:   Fri Jun 12 18:22:37 2020 +0800
+
+    兑换商品完成，兑换详情弹框完成
+
+[33mcommit d14ddedced26a4850da0eb4e22c7ca24e9c8b66c[m
+Author: Your Name <you@example.com>
+Date:   Thu Jun 11 21:06:43 2020 +0800
+
+    地址修改完成
+
+[33mcommit a4f6929ecc094ce5d9377fe2edd3145c92a0b19a[m
+Author: Your Name <you@example.com>
+Date:   Thu Jun 11 17:51:36 2020 +0800
+
+    用户选择地址列表，切换默认地址完成
+
+[33mcommit 8b52a9b4baa5fea65b57e48264fca63d398fdade[m
+Author: Your Name <you@example.com>
+Date:   Thu Jun 11 16:02:32 2020 +0800
+
+    用户添加地址完成‘
+    
+    git commit -m 用户添加地址完成‘
+
+[33mcommit 989f148815d9789182f3c91ba1ffd9587fba3a19[m
+Author: Your Name <you@example.com>
+Date:   Wed Jun 10 20:56:20 2020 +0800
+
+    兑换记录基本完成
+
+[33mcommit 176d9d21f0bbaf812d28cd30976da7cb3cbd7d54[m
+Author: Your Name <you@example.com>
+Date:   Wed Jun 10 20:09:58 2020 +0800
+
+    商品弹框基本完成
+
+[33mcommit 149613a141cc34bdced160e15c391a67390305a6[m
+Author: Your Name <you@example.com>
+Date:   Wed Jun 10 16:39:32 2020 +0800
+
+    用户等级完成，任务列表完成
+
+[33mcommit ae4b8514b99f2d77837737a936355fd8b51c28dc[m
+Author: Your Name <you@example.com>
+Date:   Tue Jun 9 19:17:16 2020 +0800
+
+    封装用户任务接口
+
+[33mcommit a7eebc5e325edf273e325ccaa834e6935f0aa9b7[m
+Author: Your Name <you@example.com>
+Date:   Tue Jun 9 18:18:18 2020 +0800
+
+    任务广场页完成
+
+[33mcommit 8a4a80772a8912f3228ea47f5477cc63b4817169[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 9 15:41:48 2020 +0800
+
+    任务接口路由处理
+
+[33mcommit a1331e8eb2f0a2b208b2102dda957206a6f58c75[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 9 10:44:12 2020 +0800
+
+    更新向宏波改动: 静态页面基本完成
+
+[33mcommit faa8e7278ec01eea240213dea657e6a6b531e917[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Fri Jun 5 18:41:32 2020 +0800
+
+    代理服务器设置完善
+
+[33mcommit 1da4af71eb4cb5c6ebff3af70fe4dba96efca0fe[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Fri Jun 5 16:50:11 2020 +0800
+
+    配置开发代理proxy设置
+
+[33mcommit e68defcd2e29a5c52ddfea60b9e4cf44d044178b[m
+Author: Your Name <you@example.com>
+Date:   Fri Jun 5 16:17:13 2020 +0800
+
+    update
+
+[33mcommit 53cbd4ad7e3d08aeef7af2426e85b901acc0cfde[m
+Author: Your Name <you@example.com>
+Date:   Fri Jun 5 11:46:27 2020 +0800
+
+    update
+
+[33mcommit 0e1ba19e0732f86bb86ea89edbc48db127d7afa4[m[33m ([m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmaster[m[33m)[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 2 16:46:14 2020 +0800
+
+    完善初始化流程
+
+[33mcommit e63b0706f135c1a12e79c6f53f4211436d65467c[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Tue Jun 2 16:10:55 2020 +0800
+
+    更新readme
+
+[33mcommit 6cf52a9cb4f9003f3339e59c015b71d66b28d5db[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Fri May 29 14:20:41 2020 +0800
+
+    增加地址填写页面，功能待完善
+
+[33mcommit 6a3efd0803f61228c5c126daae3c038aa90911d3[m
+Author: yuanbo <yuanbo@coocaa.com>
+Date:   Thu May 28 11:35:51 2020 +0800
+
+    首次提交，基本框架完成
