@@ -26,6 +26,7 @@ export class Request {
   get(url, params, headers) {
     let options = {};
     if (params) {
+      params.time = new Date().getTime()
       options.params = params;
     }
     if (headers) {

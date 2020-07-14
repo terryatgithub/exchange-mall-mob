@@ -1,11 +1,7 @@
 <template>
   <div class="home">
     <van-tabs v-model="active" @click="onClick" sticky>
-      <van-tab
-        :title="tab.specialAreaTabTitle"
-        v-for="tab in goodsList"
-        :key="tab.id"
-      >
+      <van-tab :title="tab.specialAreaTabTitle" v-for="tab in goodsList" :key="tab.id">
         <van-grid :border="false" :column-num="2">
           <van-grid-item
             v-for="item in tab.activitys"
@@ -19,7 +15,7 @@
             <div class="goodsList">
               <div>
                 <van-image
-                  :src="item.goods.goodsGalleries[0].imgUrl"
+                  :src="item.goods.thumb[2].imgUrl?item.goods.thumb[2].imgUrl:item.goods.thumb[0].imgUrl"
                   class="goods_Ima"
                 />
               </div>
@@ -27,12 +23,17 @@
               <div class="goods_Price">
                 <span>
                   {{ item.goldPrice
-                  }}<img src="../assets/images/kubi.png" alt="" class="kubi_tu"
-                /></span>
+                  }}
+                  <img
+                    src="../assets/images/kubi.png"
+                    alt
+                    class="kubi_tu"
+                  />
+                </span>
               </div>
               <div class="goods_Value">
-                <span>价值：{{ item.goods.marketPrice }}</span
-                ><span>剩余件数：{{ item.activityStock }}</span>
+                <span>价值：{{ item.goods.marketPrice }}</span>
+                <span>剩余件数：{{ item.activityStock }}</span>
               </div>
             </div>
           </van-grid-item>
@@ -62,7 +63,7 @@ import {
   Grid,
   GridItem,
   Image,
-  Form,
+  Form
 } from "vant";
 Vue.use(Button)
   .use(Cell)
@@ -77,18 +78,19 @@ let tab_name = "";
 export default {
   name: "Home",
   components: {
-    Nav,
+    Nav
   },
   data() {
     return {
       active: 0,
       goodsList: [],
       time: new Date().getTime(),
-      timePageStart: 0,
+      timePageStart: 0
     };
   },
   // mixins: [initMixin],
   beforeCreate() {
+    debugger;
     this.$checklogin(this.$store.state.loginurl);
     this.timePageStart = commonUtil.getTimeBySecond();
   },
@@ -108,10 +110,11 @@ export default {
       // window.console.log(this.goodsList);
       if (ret.code === 200) {
         console.log(ret);
-        let topicId = 95;
+        // let topicId = 95;
+        let topicId = ret.data.topic.id;
         let data = await mallApiControl.topicPage({ topicId });
         this.goodsList = data.data;
-        this.active = this.goodsList.findIndex((item) => {
+        this.active = this.goodsList.findIndex(item => {
           return item.specialAreaTabSelect === "1";
         });
         console.log(this.goodsList);
@@ -125,7 +128,7 @@ export default {
           tab_name: tab_name,
           page_state: "加载成功",
           load_duration: commonUtil.getTimeBySecond() - that.timePageStart,
-          open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录",
+          open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录"
         });
       }
     },
@@ -136,7 +139,7 @@ export default {
         tab_name: this.goodsList[this.active].specialAreaTabTitle,
         commodity_id: goodsId,
         commodity_name: name,
-        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录",
+        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录"
       });
     },
     onClick(name, title) {},
@@ -161,7 +164,7 @@ export default {
     async showMiniAppCodeToast() {
       await this.$showQRCodeToast({
         miniappUrl:
-          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582778211873&di=1d3b87c0108cdbd2984383e7df7e8771&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170430%2F6e8b2cb24fcb491bbf4d9a69c836ebe2_th.jpeg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582778211873&di=1d3b87c0108cdbd2984383e7df7e8771&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170430%2F6e8b2cb24fcb491bbf4d9a69c836ebe2_th.jpeg"
       });
     },
     handleVConsole() {
@@ -170,11 +173,11 @@ export default {
       else {
         document.getElementById("__vconsole").style.display = "none";
       }
-    },
+    }
   },
   destroyed() {
     window.removeEventListener("scroll", this.handleScroll);
-  },
+  }
 };
 </script>
 

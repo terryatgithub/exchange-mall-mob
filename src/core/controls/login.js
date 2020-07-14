@@ -1,7 +1,8 @@
 import { Request } from "@/core/services/http/request";
 import { queryCheckloginUrl } from "@/constants/http/index";
 
-const header = ""; //{ 'content-type': 'application/x-www-form-urlencoded' }
+// const header = ""; //{ 'content-type': 'application/x-www-form-urlencoded' }
+const header = { 'Cache-Control': 'no-cache' }
 
 class LoginApiControl {
   service;

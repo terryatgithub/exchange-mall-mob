@@ -25,7 +25,8 @@ const DEV = NODE_ENV === 'development'
 const PROD = NODE_ENV === 'production'
 
 module.exports = {
-  publicPath: !DEV ? './' : '/xhb/exchange/',
+  // publicPath: !DEV ? './' : '/xhb/exchange/',
+  publicPath: !DEV ? '/mobile-activity/exchangeshop/' : '/xhb/exchange/',
   devServer: {
     public: `${HOST}:${PORT}`,
     port: PORT,
@@ -34,8 +35,8 @@ module.exports = {
     },
     proxy: {
       '/gw': {
-        target: 'http://beta.webapp.skysrt.com/',
-        // target: 'https://beta-webapp.skysrt.com/',
+        target: 'https://mb2-cc.skysrt.com/mobile-activity/',
+        // target: 'http://beta.webapp.skysrt.com/',
         changeOrigin: true,
         // pathRewrite: {
         //   '^/api': ''

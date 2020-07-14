@@ -109,7 +109,7 @@
       disabled
       size="16"
       class="btn"
-      >兑换数量已达上限</van-button
+      >{{ faultmsg }}</van-button
     >
     <!-- 兑换提示框 ---跳转url,二维码跳转-->
     <van-overlay
@@ -337,6 +337,7 @@
           <div v-else-if="code.code === 20007">
             <div class="title_fault">
               登录过期，请重新登录！
+              <van-button class="tovip" @click="tologin">重新登录</van-button>
             </div>
           </div>
           <div v-else>
@@ -412,7 +413,7 @@ export default {
   },
   mixins: [initMixin],
   beforeCreate() {
-    // this.$checklogin(this.$store.state.loginurl);
+    this.$checklogin(this.$store.state.loginurl);
   },
   async created() {
     this.$store.commit("setloginurl", window.location.href);
@@ -441,6 +442,9 @@ export default {
     // console.log(data2)
   },
   methods: {
+    tologin() {
+      this;
+    },
     big() {
       let imgarr = this.images.map((item) => {
         return item.imgUrl;
@@ -467,6 +471,10 @@ export default {
       // debugger;
       if (res.code === 20017 || res.code === 20003) {
         this.faultmsg = "兑换数量已达上限";
+        return;
+      }
+      if (res.code === 20004) {
+        this.faultmsg = "兑换时间已结束";
         return;
       }
       if (two === true) {
