@@ -4,7 +4,6 @@ import store from "@/store";
 // 检验用户是否登录
 export async function checklogin(pathurl) {
   let res = await taskApiControl.queryChecklogin({ time: new Date().getTime() });
-  debugger;
   if (pathurl === "againlogin") {
     let path = location.href;
     let url = `/gw/cc/login.html?theme=coocaa-added-service&loginMethod=weixin,qq,phoneDynameic&redirect_to=${path}`;

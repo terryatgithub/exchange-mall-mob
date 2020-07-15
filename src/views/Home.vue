@@ -14,10 +14,18 @@
             <!-- to="/detail?" -->
             <div class="goodsList">
               <div>
-                <van-image
-                  :src="item.goods.thumb[2].imgUrl?item.goods.thumb[2].imgUrl:item.goods.thumb[0].imgUrl"
+                <!-- <van-image
+                  v-if="item.goods.thumb[2]!=''"
+                  :src="item.goods.thumb[2].imgUrl"
                   class="goods_Ima"
                 />
+                <van-image v-else :src="item.goods.thumb[0].imgUrl" class="goods_Ima" />-->
+                <van-image
+                  v-if="!item.goods.thumb[2]"
+                  :src="item.goods.thumb[0].imgUrl"
+                  class="goods_Ima"
+                />
+                <van-image v-else :src="item.goods.thumb[2].imgUrl" class="goods_Ima" />
               </div>
               <div class="goods_Text">{{ item.goods.goodsName }}</div>
               <div class="goods_Price">
@@ -90,7 +98,6 @@ export default {
   },
   // mixins: [initMixin],
   beforeCreate() {
-    debugger;
     this.$checklogin(this.$store.state.loginurl);
     this.timePageStart = commonUtil.getTimeBySecond();
   },
