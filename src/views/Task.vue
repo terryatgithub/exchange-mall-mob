@@ -1,12 +1,6 @@
 <template>
   <div class="task">
-    <van-tabs
-      v-model="active"
-      @click="onClick"
-      sticky
-      swipeable
-      :swipe-threshold="4"
-    >
+    <van-tabs v-model="active" @click="onClick" sticky swipeable :swipe-threshold="4">
       <van-tab :title="tab.name" v-for="(tab, index) in TaskList" :key="index">
         <div>
           <van-grid :border="false" :column-num="2" class="cneter">
@@ -39,25 +33,23 @@
                 </div>
                 <div class="bottom">
                   <span v-if="item.missionStatus === 2">
-                    <img src="../assets/images/kubi_true.png" alt="" />
-                    <span class="img_true">
-                      +{{ item.rewardCoins | numFilter }}</span
-                    >
+                    <img src="../assets/images/kubi_true.png" alt />
+                    <span class="img_true">+{{ item.rewardCoins | numFilter }}</span>
                   </span>
                   <span v-else>
-                    <img src="../assets/images/kubi.png" alt="" /> +{{
-                      item.rewardCoins | numFilter
+                    <img src="../assets/images/kubi.png" alt />
+                    +{{
+                    item.rewardCoins | numFilter
                     }}
                   </span>
                   <span v-if="item.missionStatus === 2">
-                    <img src="../assets/images/express_true.png" alt="" />
-                    <span class="img_true">
-                      +{{ item.rewardPoints | numFilter }}</span
-                    >
+                    <img src="../assets/images/express_true.png" alt />
+                    <span class="img_true">+{{ item.rewardPoints | numFilter }}</span>
                   </span>
                   <span v-else>
-                    <img src="../assets/images/experience.png" alt="" /> +{{
-                      item.rewardPoints | numFilter
+                    <img src="../assets/images/experience.png" alt />
+                    +{{
+                    item.rewardPoints | numFilter
                     }}
                   </span>
                 </div>
@@ -101,7 +93,7 @@ export default {
   // },
   name: "Task",
   components: {
-    Nav,
+    Nav
     // Test,
   },
   data() {
@@ -111,7 +103,7 @@ export default {
       showList: [],
       TaskList: [],
       time: new Date().getTime(),
-      timePageStart: 0,
+      timePageStart: 0
     };
   },
   mixins: [initMixin],
@@ -120,10 +112,6 @@ export default {
   },
   created() {
     this.$store.commit("setloginurl", window.location.href);
-    // debugger;
-    // let _href = window.location.href;
-    // let new_href = handleloginurl(_href);
-    // this.$store.commit("setloginurl", new_href);
     this.$checklogin(this.$store.state.loginurl);
   },
   async mounted() {
@@ -134,7 +122,7 @@ export default {
       source: "YINHE",
       clientId: "9F072A0ABF6E2B3D",
       clientType: 2,
-      accessToken: "",
+      accessToken: ""
     };
     this.queryTaskList(data);
   },
@@ -153,10 +141,10 @@ export default {
         List = res.data;
         let alllist = [
           { name: "日常任务", taskList: [] },
-          { name: "新手任务", taskList: [] },
+          { name: "新手任务", taskList: [] }
         ];
         for (let i = 0; i < 2; i++) {
-          alllist[i].taskList = List.filter((item) => {
+          alllist[i].taskList = List.filter(item => {
             return item.taskTag === i + 1;
           });
         }
@@ -173,7 +161,7 @@ export default {
         tab_name: tab_name,
         page_state: "加载成功",
         load_duration: commonUtil.getTimeBySecond() - that.timePageStart,
-        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录",
+        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录"
       });
     },
     // 完成任务接口
@@ -197,7 +185,7 @@ export default {
         task_name: title,
         task_type: this.TaskList[taskTag - 1].name,
         task_state: task_state,
-        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录",
+        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录"
       });
     },
     //打开APP
@@ -227,7 +215,7 @@ export default {
         appPackage: appPackage,
         openPage: detailEvent2,
         appVersion: "1000",
-        appVersionName: "V1.01",
+        appVersionName: "V1.01"
       };
       //数据采集-点击
       this.$submitLogClick({
@@ -235,10 +223,17 @@ export default {
         task_id: missionId,
         task_name: title,
         tab_name: this.TaskList[taskTag - 1].name,
-        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录",
+        open_id: this.$store.state.loginstate === 1 ? "已登录" : "未登录"
       });
       this.querySubmitTask(data, taskTag, title);
-      window.location.href = "http://" + appPackage;
+      if (
+        appPackage.indexOf("http") != -1 ||
+        appPackage.indexOf("https") != -1
+      ) {
+        window.location.href = appPackage;
+      } else {
+        window.location.href = "http://" + appPackage;
+      }
     },
     onClick(name, title) {},
     getUserInfo() {
@@ -262,7 +257,7 @@ export default {
     async showMiniAppCodeToast() {
       await this.$showQRCodeToast({
         miniappUrl:
-          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582778211873&di=1d3b87c0108cdbd2984383e7df7e8771&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170430%2F6e8b2cb24fcb491bbf4d9a69c836ebe2_th.jpeg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1582778211873&di=1d3b87c0108cdbd2984383e7df7e8771&imgtype=0&src=http%3A%2F%2Fimg.mp.itc.cn%2Fupload%2F20170430%2F6e8b2cb24fcb491bbf4d9a69c836ebe2_th.jpeg"
       });
     },
     handleVConsole() {
@@ -271,8 +266,8 @@ export default {
       else {
         document.getElementById("__vconsole").style.display = "none";
       }
-    },
-  },
+    }
+  }
 };
 </script>
 

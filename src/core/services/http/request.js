@@ -15,7 +15,10 @@ export class Request {
   post(url, params, headers, data) {
     let options = {};
     if (params) {
+      params.time = new Date().getTime()
+      params.number = Math.floor(Math.random() * 10000)
       options.params = params;
+
     }
     if (headers) {
       options.headers = headers;
@@ -27,6 +30,7 @@ export class Request {
     let options = {};
     if (params) {
       params.time = new Date().getTime()
+      params.number = Math.floor(Math.random() * 10000)
       options.params = params;
     }
     if (headers) {
@@ -38,6 +42,8 @@ export class Request {
   delete(url, params, headers) {
     let options = {};
     if (params) {
+      params.time = new Date().getTime()
+      params.number = Math.floor(Math.random() * 10000)
       options.params = params;
     }
     if (headers) {
