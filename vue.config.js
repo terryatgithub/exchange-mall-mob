@@ -23,20 +23,20 @@ console.log(__dirname)
 const resolve = dir => path.join(__dirname, dir)
 const DEV = NODE_ENV === 'development'
 const PROD = NODE_ENV === 'production'
-
-module.exports = {
+const publicPath = !DEV ? '/mobile-activity/exchangeshop/' : '/xhb/exchange/'
+var config = {
   // publicPath: !DEV ? './' : '/xhb/exchange/',
-  publicPath: !DEV ? '/mobile-activity/exchangeshop/' : '/xhb/exchange/',
+  publicPath: publicPath,
   devServer: {
-    public: `${HOST}:${PORT}`,
+    public: `${HOST}:${PORT}${publicPath}`,
     port: PORT,
     headers: {
       'Access-Control-Allow-Origin': '*'
     },
     proxy: {
       '/gw': {
-        // target: 'https://mb2-cc.skysrt.com/mobile-activity/',
-        target: 'http://beta.webapp.skysrt.com/',
+        target: 'https://mb2-cc.skysrt.com/mobile-activity/',
+        // target: 'http://beta.webapp.skysrt.com/',
         changeOrigin: true,
         // pathRewrite: {
         //   '^/api': ''
@@ -98,3 +98,6 @@ module.exports = {
 
   }
 }
+
+
+module.exports = config
