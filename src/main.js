@@ -26,9 +26,6 @@ Vue.prototype.$Notice = Notice;
 Vue.prototype.$showQRCodeToast = QRCodeToast;
 Vue.prototype.$checklogin = checklogin;
 
-// Vue.prototype.$submitLogShow = submitLogShow
-// Vue.prototype.$submitLogClick = submitLogClick
-// Vue.prototype.$submitLogResult = submitLogResult
 
 Vue.config.productionTip = false;
 

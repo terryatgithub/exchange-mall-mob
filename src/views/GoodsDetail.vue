@@ -5,14 +5,12 @@
         <img lazy-load :src="item.imgUrl" @click="big(item)" />
       </van-swipe-item>
       <template #indicator>
-        <div class="custom-indicator">
-          {{ current + 1 }}/{{ images.length }}
-        </div>
+        <div class="custom-indicator">{{ current + 1 }}/{{ images.length }}</div>
       </template>
     </van-swipe>
 
     <van-card class="goods-info" price="12">
-      <template #num> 每人限兑{{ list.limitTimes }}件 </template>
+      <template #num>每人限兑{{ list.limitTimes }}件</template>
       <template #origin-price>
         <div plain>市场价值: ￥{{ list.goods.marketPrice }}元</div>
       </template>
@@ -30,7 +28,8 @@
       <template #price>
         <div plain class="van-card__price-integer">
           {{ list.goldPrice
-          }}<img src="../assets/images/kubi@2x.png" alt="" class="kubi_tu" />
+          }}
+          <img src="../assets/images/kubi@2x.png" alt class="kubi_tu" />
         </div>
       </template>
     </van-card>
@@ -40,15 +39,15 @@
       desc="兑换时间：2020.05.05  00:00 - 2021.04.01  00:00"
       title="剩余数量：567件"
     >
-      <template #title
-        ><div class="goods_num">剩余数量：{{ list.activityStock }}件</div>
+      <template #title>
+        <div class="goods_num">剩余数量：{{ list.activityStock }}件</div>
       </template>
-      <template #desc
-        ><div class="goods_num">
+      <template #desc>
+        <div class="goods_num">
           兑换时间：{{ list.startTime | timeFilter }} -
           {{ list.endTime | timeFilter }}
-        </div></template
-      >
+        </div>
+      </template>
     </van-card>
 
     <van-list
@@ -74,8 +73,7 @@
                 borderColor: '#1989fa',
                 padding: 'padding: 10px 35px 0;',
               }"
-              >图文详情
-            </van-divider>
+            >图文详情</van-divider>
             <div class="tips">上拉查看更多详情</div>
           </div>
           <div v-else class="goodsShow">
@@ -85,8 +83,7 @@
                 borderColor: '#d8d8d8',
                 padding: '10px 0px',
               }"
-              >商品详情</van-divider
-            >
+            >商品详情</van-divider>
             <div class="goods_intro" v-html="list.goods.commonRules"></div>
           </div>
         </div>
@@ -100,8 +97,7 @@
       @click="onClickButton"
       size="16"
       class="btn"
-      >立即兑换</van-button
-    >
+    >立即兑换</van-button>
     <van-button
       v-else
       color="#AFAFAF"
@@ -109,8 +105,7 @@
       disabled
       size="16"
       class="btn"
-      >{{ faultmsg }}</van-button
-    >
+    >{{ faultmsg }}</van-button>
     <!-- 兑换提示框 ---跳转url,二维码跳转-->
     <van-overlay
       :show="showOverlay"
@@ -122,12 +117,7 @@
     >
       <div class="overlay-wrapper" @click.stop>
         <div class="prompt">
-          <img
-            src="../assets/images/ok.png"
-            alt="图片加载异常"
-            width="90px"
-            height="90px"
-          />
+          <img src="../assets/images/ok.png" alt="图片加载异常" width="90px" height="90px" />
           <p>恭喜您，兑换完成！</p>
         </div>
         <!-- url跳转 -->
@@ -141,19 +131,15 @@
           "
         >
           <div class="top">
-            <img
-              :src="list.goods.goodsGalleries[0].imgUrl"
-              alt="图片加载异常"
-              width="80px"
-              height="80px"
-            />
+            <img :src="list.goods.goodsGalleries[0].imgUrl" alt="图片加载异常" width="80px" height="80px" />
             <div>
               <div class="title">{{ list.goods.goodsName }}</div>
               <div class="price">
                 {{ list.goldPrice
-                }}<img
+                }}
+                <img
                   src="../assets/images/kubi@2x.png"
-                  alt=""
+                  alt
                   class="kubi_tu2"
                 />
               </div>
@@ -161,54 +147,38 @@
           </div>
           <div class="bottom">
             <div v-if="list.goods.goodsType != 1">
-              <van-button
-                class="url_btn"
-                @click="toUrl(orderList.goods.receiveSource)"
-                >跳转购买</van-button
-              >
-              <van-button class="cancel_btn" @click="goback">
-                返回主页 </van-button
-              ><br />
+              <van-button class="url_btn" @click="toUrl(orderList.goods.receiveSource)">跳转购买</van-button>
+              <van-button class="cancel_btn" @click="goback">返回主页</van-button>
+              <br />
             </div>
             <div v-else>
-              <van-button class="btn_address" @click="toAddress">
-                填写地址
-              </van-button>
+              <van-button class="btn_address" @click="toAddress">填写地址</van-button>
             </div>
             <span class="url">首页→我的→兑换记录，查看所有兑换</span>
           </div>
         </div>
         <!-- 二维码 -->
-        <div
-          class="box_ma"
-          v-else-if="list.goods.goodsType === 8 && list.goods.receiveType === 3"
-        >
+        <div class="box_ma" v-else-if="list.goods.goodsType === 8 && list.goods.receiveType === 3">
           <div class="top" v-if="orderList != ''">
-            <img
-              :src="orderList.goods.receiveSource"
-              alt="图片加载异常"
-              width="94px"
-              height="94px"
-            />
+            <img :src="orderList.goods.receiveSource" alt="图片加载异常" width="94px" height="94px" />
             <div>
               <span class="title">{{ orderList.goods.goodsName }}</span>
               <div class="price">
                 ￥{{ orderList.goldNumber
-                }}<img
+                }}
+                <img
                   src="../assets/images/kubi@2x.png"
-                  alt=""
+                  alt
                   class="kubi_tu2"
                 />
               </div>
               <div class="ma">长按二维码，</div>
-              <div class="ma">
-                进入小程序购买商品
-              </div>
+              <div class="ma">进入小程序购买商品</div>
             </div>
           </div>
           <div class="bottom">
-            <van-button class="url_btn" @click="goback"> 返回主页 </van-button
-            ><br />
+            <van-button class="url_btn" @click="goback">返回主页</van-button>
+            <br />
             <div class="url">首页→我的→兑换记录，查看所有兑换</div>
           </div>
         </div>
@@ -229,12 +199,7 @@
     >
       <div class="overlay-wrapper" @click.stop>
         <div class="prompt discount">
-          <img
-            src="../assets/images/ok.png"
-            alt="图片加载异常"
-            width="90px"
-            height="90px"
-          />
+          <img src="../assets/images/ok.png" alt="图片加载异常" width="90px" height="90px" />
           <p class="vip">恭喜您，兑换完成！</p>
         </div>
         <div class="box_discount">
@@ -250,8 +215,8 @@
             <span class="title">{{ list.goods.goodsName }}</span>
           </div>
           <div class="bottom">
-            <van-button class="url_btn" @click="goback"> 返回主页 </van-button
-            ><br />
+            <van-button class="url_btn" @click="goback">返回主页</van-button>
+            <br />
             <div class="url">首页→我的→兑换记录，查看所有兑换</div>
           </div>
         </div>
@@ -269,12 +234,7 @@
     >
       <div class="overlay-wrapper" @click.stop>
         <div class="prompt_vip">
-          <img
-            src="../assets/images/ok.png"
-            alt="图片加载异常"
-            width="90px"
-            height="90px"
-          />
+          <img src="../assets/images/ok.png" alt="图片加载异常" width="90px" height="90px" />
           <p class="vip">恭喜您，会员权益立即生效！</p>
           <span>可前往XXXVIP产品面查看</span>
         </div>
@@ -287,52 +247,37 @@
             </div>
             <div v-if="orderList != ''">
               <span class="title">{{ orderList.goods.goodsName }}</span>
-              <span class="price"
-                >{{ orderList.goldNumber
-                }}<img
+              <span class="price">
+                {{ orderList.goldNumber
+                }}
+                <img
                   src="../assets/images/kubi@2x.png"
-                  alt=""
+                  alt
                   class="kubi_tu2"
-              /></span>
+                />
+              </span>
             </div>
           </div>
           <div class="bottom">
-            <van-button class="url_btn" @click="goback"> 返回主页 </van-button
-            ><br />
+            <van-button class="url_btn" @click="goback">返回主页</van-button>
+            <br />
             <div class="url">首页→我的→兑换记录，查看所有兑换</div>
           </div>
         </div>
       </div>
     </van-overlay>
     <!-- 兑换提示框 ---错误提示-->
-    <van-overlay
-      :show="showOverlay"
-      @click="showOverlay = false"
-      v-if="code != ''"
-    >
+    <van-overlay :show="showOverlay" @click="showOverlay = false" v-if="code != ''">
       <div class="fault" @click.stop>
         <div class="fault_prompt">
-          <img
-            src="../assets/images/fault.png"
-            alt="图片加载异常"
-            width="90px"
-            height="90px"
-          />
+          <img src="../assets/images/fault.png" alt="图片加载异常" width="90px" height="90px" />
           <div v-if="code === ''">
             <p>数据异常，兑换失败！</p>
           </div>
           <div v-else-if="code.code === 20009">
-            <div class="title">
-              抱歉兑换失败！
-            </div>
-            <div class="text">
-              {{ code.msg }}
-            </div>
-            <van-button
-              class="tovip"
-              url="http://wx.coocaa.com/movies/orderVIP.html"
-              >前往开通VIP</van-button
-            >
+            <div class="title">抱歉兑换失败！</div>
+            <div class="text">{{ code.msg }}</div>
+            <van-button class="tovip" url="http://wx.coocaa.com/movies/orderVIP.html">前往开通VIP</van-button>
           </div>
           <div v-else-if="code.code === 20007">
             <div class="title_fault">
@@ -358,6 +303,7 @@ import { homeApiControl, userApiControl, mallApiControl } from "@/core";
 import initMixin from "@/mixins/initMixin";
 import commonUtil from "@/utils/index";
 import cacheUtil from "@/utils/cache";
+import { EventBus } from "@/utils/bus";
 import Vue from "vue";
 import {
   Button,
@@ -409,6 +355,7 @@ export default {
       isshow: false,
       code: "", //兑换状态码
       faultmsg: "", //兑换提示
+      test: "",
     };
   },
   mixins: [initMixin],
@@ -440,6 +387,10 @@ export default {
     // }
     // const data2 = await userApiControl.getUserInfo()
     // console.log(data2)
+    EventBus.$on("test", (msg) => {
+      this.test = msg;
+    });
+    console.log("this.test" + this.test);
   },
   methods: {
     tologin() {

@@ -88,22 +88,6 @@ export default {
   },
   mounted() {},
   methods: {
-    // async queryTaskHistory(data) {
-    //   let res = await taskApiControl.queryTaskHistory(data);
-    //   // console.log(res);
-    //   let state = 1;
-    //   if (res.code === "0") {
-    //     this.TaskList = res.data.results;
-    //     console.log(this.TaskList);
-    //     state = 1;
-    //   } else {
-    //     state = 0;
-    //   }
-    //   this.$submitLogShow({
-    //     page_name: "任务记录页面",
-    //     page_state: state ? "加载成功" : "加载异常",
-    //   });
-    // },
     async onLoad() {
       let res = await taskApiControl.queryTaskHistory({
         sign: "",

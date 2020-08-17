@@ -35,8 +35,8 @@ var config = {
     },
     proxy: {
       '/gw': {
-        target: 'https://mb2-cc.skysrt.com/mobile-activity/',
-        // target: 'http://beta.webapp.skysrt.com/',
+        // target: 'https://mb2-cc.skysrt.com/mobile-activity/',
+        target: 'http://beta.webapp.skysrt.com/',
         changeOrigin: true,
         // pathRewrite: {
         //   '^/api': ''

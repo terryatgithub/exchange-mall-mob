@@ -17,11 +17,11 @@
       >
         <!-- <template #title>
           <div class="van-card__title" plain>{{ item.goodsName }}</div>
-        </template> -->
+        </template>-->
         <template #price>
           <div plain class="van-card__price-integer">
             <span class="kubi_title">{{ item.goldNumber }}</span>
-            <img src="../assets/images/kubi.png" alt="" class="kubi_tu" />
+            <img src="../assets/images/kubi.png" alt class="kubi_tu" />
           </div>
         </template>
         <template #footer>
@@ -32,17 +32,15 @@
             size="normal"
             color="linear-gradient(to right, #FF8600, #FD4E00)"
             @click="toaddress(item.orderSn)"
-            >继续领取</van-button
-          >
+          >继续领取</van-button>
           <van-button
             v-else
             round
             type="warning"
             size="normal"
             color="linear-gradient(to right, #FF8600, #FD4E00)"
-            @click="btn(item.id)"
-            >订单详情</van-button
-          >
+            @click="btn(item.orderSn)"
+          >订单详情</van-button>
         </template>
       </van-card>
     </van-list>
@@ -69,20 +67,16 @@
             "
           >
             <div class="top">
-              <img
-                :src="list.goods.goodsGalleries[0].imgUrl"
-                alt=""
-                width="80px"
-                height="80px"
-              />
+              <img :src="list.goods.goodsGalleries[0].imgUrl" alt width="80px" height="80px" />
               <div>
                 <div class="title">{{ list.goods.goodsName }}</div>
                 <br />
                 <div class="price">
                   {{ list.goldNumber
-                  }}<img
+                  }}
+                  <img
                     src="../assets/images/kubi@2x.png"
-                    alt=""
+                    alt
                     class="kubi_tu2"
                   />
                 </div>
@@ -94,11 +88,9 @@
                 <van-button class="btn_address" @click="toMy">
                   返回主页 </van-button
                 ><br />
-              </div> -->
+              </div>-->
               <!-- <div v-else> -->
-              <van-button class="btn_address" @click="toMy">
-                返回
-              </van-button>
+              <van-button class="btn_address" @click="toMy">返回</van-button>
               <!-- </div> -->
               <span class="url">首页→我的→兑换记录，查看所有兑换</span>
             </div>
@@ -111,31 +103,25 @@
             "
           >
             <div class="top" v-if="orderList != ''">
-              <img
-                :src="list.goods.receiveSource"
-                alt=""
-                width="94px"
-                height="94px"
-              />
+              <img :src="list.goods.receiveSource" alt width="94px" height="94px" />
               <div>
                 <span class="title">{{ list.goods.goodsName }}</span>
                 <div class="price">
                   {{ list.goldNumber
-                  }}<img
+                  }}
+                  <img
                     src="../assets/images/kubi@2x.png"
-                    alt=""
+                    alt
                     class="kubi_tu2"
                   />
                 </div>
                 <div class="ma">长按二维码，</div>
-                <div class="ma">
-                  进入小程序购买商品
-                </div>
+                <div class="ma">进入小程序购买商品</div>
               </div>
             </div>
             <div class="bottom">
-              <van-button class="url_btn" @click="toMy"> 返回 </van-button
-              ><br />
+              <van-button class="url_btn" @click="toMy">返回</van-button>
+              <br />
               <div class="url">首页→我的→兑换记录，查看所有兑换</div>
             </div>
           </div>
@@ -155,7 +141,7 @@
         <div class="overlay-wrapper" @click.stop>
           <!-- <div class="prompt discount">
             <p class="vip">兑换订单详情</p>
-          </div> -->
+          </div>-->
           <div class="prompt">
             <p class="one">兑换订单详情</p>
             <br />
@@ -173,7 +159,7 @@
               ><br />
               <div class="url">首页→我的→兑换记录，查看所有兑换</div>
             </div>
-          </div> -->
+          </div>-->
           <div class="box_discount">
             <!-- 第三方优惠券 -->
             <div class="top" v-if="list.goods.goodsType === 8">
@@ -186,8 +172,8 @@
               <span class="title">{{ list.goods.goodsName }}</span>
             </div>
             <div class="bottom">
-              <van-button class="url_btn" @click="toMy"> 返回 </van-button
-              ><br />
+              <van-button class="url_btn" @click="toMy">返回</van-button>
+              <br />
               <div class="url">首页→我的→兑换记录，查看所有兑换</div>
             </div>
           </div>
@@ -213,7 +199,7 @@
             />
             <p class="vip">恭喜您，会员权益立即生效！</p>
             <span>可前往XXXVIP产品面查看</span>
-          </div> -->
+          </div>-->
           <div class="prompt">
             <p class="one">兑换订单详情</p>
             <br />
@@ -229,18 +215,20 @@
               </div>
               <div>
                 <span class="title">{{ list.goods.goodsName }}</span>
-                <span class="price"
-                  >{{ list.goldNumber
-                  }}<img
+                <span class="price">
+                  {{ list.goldNumber
+                  }}
+                  <img
                     src="../assets/images/kubi@2x.png"
-                    alt=""
+                    alt
                     class="kubi_tu2"
-                /></span>
+                  />
+                </span>
               </div>
             </div>
             <div class="bottom">
-              <van-button class="url_btn" @click="toMy"> 返回 </van-button
-              ><br />
+              <van-button class="url_btn" @click="toMy">返回</van-button>
+              <br />
               <div class="url">首页→我的→兑换记录，查看所有兑换</div>
             </div>
           </div>
@@ -334,14 +322,20 @@ export default {
         },
       });
     },
-    btn(goodsid) {
-      // console.log(goodsid);
-      let data = this.orderList.filter((item) => {
-        return item.id === goodsid;
+    //订单详情信息
+    async queryorderInfo(data) {
+      let res = await taskApiControl.queryorderInfo(data);
+      if (res.code == 200) {
+        console.log(res);
+        this.list = res.data;
+        this.showOverlay = true;
+      }
+    },
+    btn(orderSn) {
+      console.log(orderSn);
+      this.queryorderInfo({
+        orderSn
       });
-      this.list = data[0];
-      this.showOverlay = true;
-      console.log(this.list);
     },
     toMy() {
       // this.$router.go(0);

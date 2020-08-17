@@ -60,6 +60,7 @@ import initMixin from "@/mixins/initMixin";
 import commonUtil from "@/utils/index";
 import cacheUtil from "@/utils/cache";
 import { handleloginurl } from "@/utils/login"; //是否登录判断
+import { EventBus } from "@/utils/bus"; //
 import Vue from "vue";
 import {
   Button,
@@ -141,6 +142,9 @@ export default {
     },
     goodsclick(id, name, goodsId) {
       this.$router.push("detail?actId=" + id);
+      //EventBus
+      EventBus.$emit("test", "hahahhahahah");
+
       this.$submitLogClick({
         page_name: "兑换商城主页",
         tab_name: this.goodsList[this.active].specialAreaTabTitle,
